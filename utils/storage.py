@@ -1,12 +1,12 @@
-import aiofiles.os as aio_os
 import os
 from datetime import datetime
 from aiogram import Bot
 from aiogram.types import Message
+from config import MEDIA_ROOT   # ← Добавили эту строку
 
 async def save_file(bot: Bot, message: Message, file_type: str):
     folder = os.path.join(MEDIA_ROOT, file_type)
-    await aio_os.makedirs(folder, exist_ok=True)
+    os.makedirs(folder, exist_ok=True)
     
     if file_type == "photo":
         file_obj = message.photo[-1]
