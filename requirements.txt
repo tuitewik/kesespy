@@ -1,0 +1,5 @@
+aiogram[fast]
+aiofiles
+python-dotenv
+sqlalchemy
+aiosqlite
